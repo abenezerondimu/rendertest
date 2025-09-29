@@ -7,15 +7,12 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch index.js",
-    "build:ui": "rm -rf dist && cd ../notes-frontend/ && npm run build && cp -r dist ../notes-backend",
-    "deploy": "fly deploy",
-    "deploy:full": "npm run build:ui && npm run deploy",    
-    "logs:prod": "fly logs"
+    "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "Abenezer Wondimu",
   "license": "MIT",
   "dependencies": {
-    "cors": "^2.8.5",
     "express": "^5.1.0"
   }
 }

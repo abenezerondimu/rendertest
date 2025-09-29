@@ -1,9 +1,6 @@
 const express = require("express");
 
 const app = express();
-const cors = require("cors");
-
-app.use(cors());
 app.use(express.json());
 app.use(express.static("dist"));
 
@@ -70,7 +67,6 @@ app.post("/api/notes/", (req, res) => {
     important: req.body.important || false,
   };
 
-  console.log(note);
   notes = notes.concat(note);
   res.json(note);
 });
