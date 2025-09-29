@@ -71,11 +71,11 @@ app.post("/api/notes/", (req, res) => {
   res.json(note);
 });
 
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
-app.listen(PORT, "localhost", (err) => {
+app.listen(port, "localhost", (err) => {
   if (err) {
     throw err;
   }
-  console.log(`listening on port ${PORT}!`);
+  console.log(`listening on port ${port}!`);
 });
